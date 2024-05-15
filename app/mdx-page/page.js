@@ -13,10 +13,9 @@ export default function Page() {
 
   return (
     <div className="flex flex-col">
-      {pages.map((page) => {
-        console.dir(page);
+      {pages.map((page, index) => {
         return (
-          <div className="w-full h-screen">
+          <div className="w-full h-screen" key={index}>
             <div className={`${style.content} w-[1024px]`}>
               <MDX page={page} />
             </div>
