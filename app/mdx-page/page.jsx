@@ -14,24 +14,22 @@ export default function Page() {
   useEffect(() => {
     const fetchComponents = async () => {
       const files = await getMarkdownFiles();
-      files.forEach(async (file) => {
-        const mdx = await import(`@/markdown/${file}`);
-        setMdxComponents([...mdxComponents, mdx.default]);
-      });
+      const mdxs = await Promise.all(
+        files.map((file) => import(`@/markdown/${file}`))
+      );
+      const mdxsCmps = mdxs.map((mdx) => mdx.default);
+      setMdxComponents(mdxsCmps);
     };
 
     fetchComponents();
-    //TBD dependancy array logic - if adding mdxComponents -> infinite loop why?
   }, []);
-
-  console.log(mdxComponents);
 
   return (
     <>
       {mdxComponents.map((component, index) => (
         <div key={index} className="flex flex-col">
           <div className={`mx-auto min-h-screen w-[1024px]`}>
-           ´<MDX component={component} />
+            ´<MDX component={component} />
           </div>
         </div>
       ))}
