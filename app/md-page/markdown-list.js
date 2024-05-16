@@ -1,13 +1,30 @@
 "use server";
 import { readFileSync } from "fs";
+import { readdir } from "node:fs/promises";
 import { join } from "path";
 
-export async function Markdowns() {
-  const text = readFileSync(
-    join(__dirname, "../../../../markdown/welcome.mdx"),
-    "utf8",
-  );
-  console.dir(join(__dirname, "../../../../markdown/welcome.mdx"));
+async function getMarkdownFileNames() {
+  try {
+    const path = join(__dirname, "../../../../markdown");
+    let files = await readdir(path);
+    files.sort();
 
-  return [text, text];
+    return files;
+  } catch (err) {
+    console.error(err);
+  }
+}
+export async function Markdowns() {
+  const files = await getMarkdownFileNames();
+
+  let markdownList = [];
+  for (const file of files) {
+    const text = readFileSync(
+      join(__dirname, "../../../../markdown/", file),
+      "utf8",
+    );
+    markdownList.push(text);
+  }
+
+  return markdownList;
 }
