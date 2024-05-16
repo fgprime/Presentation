@@ -5,7 +5,7 @@ import { useMDXComponents } from "@mdx-js/react";
 import { getMarkdownFiles } from "@/app/actions/getMarkdownFiles";
 
 function MDX({ component }) {
-  return ;
+  return useMDXComponents(component);
 }
 
 export default function Page() {
@@ -21,6 +21,7 @@ export default function Page() {
     };
 
     fetchComponents();
+    //TBD dependancy array logic - if adding mdxComponents -> infinite loop why?
   }, []);
 
   console.log(mdxComponents);
@@ -30,8 +31,7 @@ export default function Page() {
       {mdxComponents.map((component, index) => (
         <div key={index} className="flex flex-col">
           <div className={`mx-auto min-h-screen w-[1024px]`}>
-            {/* <MDX component={component} /> */}
-            Test
+           ´<MDX component={component} />
           </div>
         </div>
       ))}
