@@ -27,11 +27,9 @@ export default function Page() {
   return (
     <>
       {mdxComponents.map((component, index) => (
-        <div key={index} className="flex flex-col">
-          <div className={`mx-auto min-h-screen w-[1024px]`}>
+          <div key={index} className="mx-auto content-center min-h-screen w-[1024px]">
             <MDX component={component} />
           </div>
-        </div>
       ))}
     </>
   );
