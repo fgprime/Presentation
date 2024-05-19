@@ -9,6 +9,14 @@ const config: Config = {
     "./mdx-components.tsx",
   ],
   theme: {
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      circle: "circle",
+      decimal: "decimal",
+      square: "square",
+      roman: "upper-roman",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
