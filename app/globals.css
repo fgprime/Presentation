@@ -38,12 +38,14 @@ body {
     @apply uppercase;
   }
   h1 {
-    font-size: max(4vh, 4vw);
-    @apply m-2;
+    font-weight: 100;
+    font-size: max(5vh, 6vw);
+    @apply mx-2;
   }
   h2 {
-    font-size: max(3vh, 3vw);
-    @apply m-2;
+    font-weight: 400;
+    font-size: max(2.5vh, 3vw);
+    @apply mx-2;
   }
 
   p {

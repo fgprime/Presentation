@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const workSans = Work_Sans({ weight: ["200", "300"], subsets: ["latin"] });
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Presentation",
