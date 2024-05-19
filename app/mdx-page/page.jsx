@@ -27,9 +27,14 @@ export default function Page() {
   return (
     <>
       {mdxComponents.map((component, index) => (
-          <div key={index} className="mx-auto content-center min-h-screen w-[1024px]">
+        <div key={`p-${index}`}>
+          <div
+            key={index}
+            className="mx-auto content-center min-h-screen w-[90vw]"
+          >
             <MDX component={component} />
           </div>
+        </div>
       ))}
     </>
   );
