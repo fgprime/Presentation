@@ -32,20 +32,27 @@ body {
   }
 
   h1,
-  h2,
-  h3,
-  h4 {
+  h2 {
     @apply uppercase;
   }
+
   h1 {
     font-weight: 100;
     font-size: max(5vh, 6vw);
     @apply mx-2;
+    line-height: 4rem;
   }
+
   h2 {
     font-weight: 400;
     font-size: max(2.5vh, 3vw);
-    @apply mx-2;
+    @apply mx-2 p-0;
+  }
+
+  h3 {
+    font-weight: 200;
+    font-size: max(2.5vh, 1.5vw);
+    @apply absolute bottom-8 left-8 bg-neutral-950/50 w-full px-8;
   }
 
   p {
