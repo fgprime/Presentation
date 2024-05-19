@@ -53,4 +53,7 @@ body {
   ul {
     @apply list-circle p-8;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
