@@ -30,4 +30,27 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply uppercase;
+  }
+  h1 {
+    font-size: max(4vh, 4vw);
+    @apply m-2;
+  }
+  h2 {
+    font-size: max(3vh, 3vw);
+    @apply m-2;
+  }
+
+  p {
+    @apply p-4;
+  }
+
+  ul {
+    @apply list-circle p-8;
+  }
 }
