@@ -3,6 +3,7 @@
 import { getMarkdownFiles } from "@/app/actions/getMarkdownFiles";
 import { useMDXComponents } from "@mdx-js/react";
 import { useEffect, useState } from "react";
+import Navigation from "@/components/Navigation";
 
 function MDX({ component }) {
   return useMDXComponents(component);
@@ -26,6 +27,7 @@ export default function Page() {
 
   return (
     <>
+      <Navigation pages={mdxComponents.length} />
       {mdxComponents.map((component, index) => (
         <div key={`p-${index}`}>
           <div
