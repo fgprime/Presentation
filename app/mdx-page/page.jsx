@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useMDXComponents } from "@mdx-js/react";
 import { getMarkdownFiles } from "@/app/actions/getMarkdownFiles";
+import { useMDXComponents } from "@mdx-js/react";
+import { useEffect, useState } from "react";
 
 function MDX({ component }) {
   return useMDXComponents(component);
@@ -15,7 +15,7 @@ export default function Page() {
     const fetchComponents = async () => {
       const files = await getMarkdownFiles();
       const mdxs = await Promise.all(
-        files.map((file) => import(`@/markdown/${file}`))
+        files.map((file) => import(`@/markdown/${file}`)),
       );
       const mdxsCmps = mdxs.map((mdx) => mdx.default);
       setMdxComponents(mdxsCmps);
