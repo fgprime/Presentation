@@ -1,23 +1,32 @@
-import MyComponent from '@/components/MyComponent';
- 
-# Welcome to my MDX page 2!
+import Mermaid from "@/components/Mermaid";
 
-## Subtitle
+# Welcome to Page.!
 
-This is some **bold** and _italics_ text.
+## Process.
 
-This is a list in markdown:
+<Mermaid
+  chart={`
+    graph TD; 
+subgraph "Repositories"
+    A[Main Repo];
+    A --> B[Project 1 Repo];
+    B --> A;
+    A --> C[Project 2 Repo];
+    C --> A;
+    A --> D[Project 3 Repo];
+    D --> A;
+end
+subgraph "Instance"
+    B --> X[Project 1 App];
+    C --> Y[Project 2 App];
+    D --> Z[Project 3 App];
+    A --> W[Main App];
+end
+`}
+/>
 
-- One
-- Two
-- Three
-
-Checkout my React component:
-
-<MyComponent />
-
----
-
-# Hallo
-
----
+<Mermaid
+  chart={
+    "graph TD; A[Main Repo]; A --> B[Project 1 Repo];  A --> C[Project 2 Repo];  A --> D[Project 3 Repo];"
+  }
+/>
