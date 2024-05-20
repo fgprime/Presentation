@@ -4,6 +4,7 @@ import { getMarkdownFiles } from "@/app/actions/getMarkdownFiles";
 import { useMDXComponents } from "@mdx-js/react";
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import End from "@/components/End";
 
 function MDX({ component }) {
   return useMDXComponents(component);
@@ -38,6 +39,7 @@ export default function Page() {
           </div>
         </div>
       ))}
+      <End />
     </>
   );
 }
