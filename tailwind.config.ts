@@ -16,6 +16,7 @@ const config: Config = {
       decimal: "decimal",
       square: "square",
       roman: "upper-roman",
+      plus: '"+ "',
     },
     extend: {
       backgroundImage: {
