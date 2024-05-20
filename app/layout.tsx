@@ -3,7 +3,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
-  weight: ["100", "200", "300", "400"],
+  weight: ["100", "200", "300", "400", "600"],
   subsets: ["latin"],
 });
 
