@@ -24,6 +24,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  @apply text-2xl font-light antialiased;
 }
 
 @layer utilities {
@@ -31,36 +33,32 @@ body {
     text-wrap: balance;
   }
 
-  h1,
-  h2 {
-    @apply uppercase;
-  }
-
   h1 {
-    font-weight: 100;
-    font-size: max(5vh, 6vw);
-    @apply mx-2;
-    line-height: 4rem;
+    font-size: max(4vh, 5vw);
+    @apply mx-2 uppercase font-extralight leading-tight tracking-wide;
   }
 
   h2 {
-    font-weight: 400;
+    font-weight: 100;
     font-size: max(2.5vh, 3vw);
-    @apply mx-2 p-0;
+    @apply m-2 mb-20 font-thin;
   }
 
   h3 {
-    font-weight: 200;
     font-size: max(2.5vh, 1.5vw);
-    @apply absolute bottom-8 left-8 bg-neutral-950/50 w-full px-8;
+    @apply absolute bottom-8 left-8 bg-neutral-950/50 w-full px-8 font-extralight;
   }
 
   p {
-    @apply p-4;
+    @apply p-2;
+  }
+
+  p > strong {
+    @apply font-semibold;
   }
 
   ul {
-    @apply list-circle p-8;
+    @apply list-plus p-2 pl-8;
   }
   ::-webkit-scrollbar {
     display: none;
