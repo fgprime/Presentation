@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* :root { */
+/*   --foreground-rgb: 0, 0, 0; */
+/*   --background-start-rgb: 214, 219, 220; */
+/*   --background-end-rgb: 255, 255, 255; */
+/* } */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* @media (prefers-color-scheme: dark) { */
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
+/* } */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,10 +24,43 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  @apply text-2xl font-light antialiased;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  h1 {
+    font-size: max(4vh, 5vw);
+    @apply mx-2 uppercase font-extralight leading-tight tracking-wide;
+  }
+
+  h2 {
+    font-weight: 100;
+    font-size: max(2.5vh, 3vw);
+    @apply m-2 mb-20 font-thin;
+  }
+
+  h3 {
+    font-size: max(2.5vh, 1.5vw);
+    @apply absolute bottom-8 left-8 bg-neutral-950/50 w-full px-8 font-extralight;
+  }
+
+  p {
+    @apply p-2;
+  }
+
+  p > strong {
+    @apply font-semibold;
+  }
+
+  ul {
+    @apply list-plus p-2 pl-8;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
