@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useMDXComponents } from "@mdx-js/react";
 import { getMarkdownFiles } from "@/app/actions/getMarkdownFiles";
+import Pagination from "@/components/Pagination";
 
 function MDX({ component }) {
   return useMDXComponents(component);
@@ -30,6 +31,10 @@ export default function Page() {
           <div key={index} className="mx-auto content-center min-h-screen w-[1024px]">
             <MDX component={component} />
           </div>
+          <Pagination
+            numberOfPage={index + 1}
+            numberOfAllPages={mdxComponents.length}
+          />
       ))}
     </>
   );
